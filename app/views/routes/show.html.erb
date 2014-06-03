@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id:</b>
+  <%= @route.id %>
+</p>
+
+<p>
+  <b>Load:</b>
+  <%= @route.load %>
+</p>
+
+<p>
+  <b>Fare:</b>
+  <%= @route.fare %>
+</p>
+
+<p>
+  <b>Info:</b>
+  <%= @route.info %>
+</p>
+
+
+<%= link_to 'Edit', edit_route_path(@route) %> |
+<%= link_to 'Back', routes_path %>

@@ -1,0 +1,14 @@
+<div ng-controller="UserListCtrl">
+    <table class="table table-striped">
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Info</th>
+        </tr>
+        <tr ng-click="test($index + 1)" ng-repeat="user in users">
+            <td>{{$index + 1}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.info}}</td>
+        </tr>
+    </table>
+</div>

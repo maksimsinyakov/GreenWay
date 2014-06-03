@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id:</b>
+  <%= @user.id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @user.name %>
+  <% @cars.each do |car| %>
+      <%= car.color %>
+  <% end %>
+</p>
+
+<p>
+  <b>Car:</b>
+  <%= @user.car_id %>
+</p>
+
+<p>
+  <b>Info:</b>
+  <%= @user.info %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

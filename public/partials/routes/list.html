@@ -1,0 +1,18 @@
+<div ng-controller="RouteListCtrl">
+    <table class="table table-striped">
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Load</th>
+            <th>Status</th>
+        </tr>
+        <tr ng-click="test($index + 1)" ng-repeat="route in routes">
+            <td>{{$index + 1}}</td>
+            <td>{{route.name}}</td>
+            <td>{{route.price}}</td>
+            <td>{{route.load}}</td>
+            <td>{{route.info}}</td>
+        </tr>
+    </table>
+</div>
