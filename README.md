@@ -1,0 +1,1 @@
+Templates location => /public/partials
