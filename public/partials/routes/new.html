@@ -1,0 +1,28 @@
+<div ng-controller="NewRouteCtrl" class="new-route">
+    <h2>New route</h2>
+    <form role="form" name="routeForm" ng-submit="submitForm(routeForm)">
+        <div class="form-group">
+            <label for="focusedInput">Name</label>
+            <input type="text" class="form-control" id="focusedInput" ng-model="name" placeholder="Enter name">
+        </div>
+        <div class="form-group">
+            <label for="pass">Fare</label>
+            <input type="text" class="form-control" id="pass" ng-model="fare" placeholder="Enter fare">
+        </div>
+        <div class="form-group">
+            <label for="info">Info</label>
+            <textarea class="form-control" rows="7" id="info" ng-model="info" placeholder="Enter info"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <div id="map">
+        <label>Put markers</label>
+        <div ng-repeat="marker in myMarkers" ui-map-marker="myMarkers[$index]"
+             ui-event="{'map-click': 'openMarkerInfo(marker)'}">
+        </div>
+        <div class="map_canvas" ui-map="myMap" class="map"
+             ui-event="{'map-click': 'addMarker($event, $params)' }"
+             ui-options="mapOptions">
+        </div>
+    </div>
+</div>

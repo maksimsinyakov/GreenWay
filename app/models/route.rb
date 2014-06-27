@@ -1,3 +1,5 @@
 class Route < ActiveRecord::Base
-  attr_accessible :fare, :id, :info, :load, :name
+  has_many :moves
+
+  attr_accessible :fare, :id, :info, :load, :name, :coord
 end

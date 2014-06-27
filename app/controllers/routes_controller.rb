@@ -11,8 +11,9 @@ class RoutesController < ApplicationController
   # GET /routes/1.json
   def show
     @route = Route.find(params[:id])
+    @moves = @route.moves
 
-    render json: @route
+    render json: {moves: @moves.to_json(:include => { :car => { :include =>  :user } } ), route: @route}
   end
 
   # GET /routes/new

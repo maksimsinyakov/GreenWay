@@ -1,18 +1,25 @@
-<div ng-controller="RouteListCtrl">
-    <table class="table table-striped">
-        <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Load</th>
-            <th>Status</th>
-        </tr>
-        <tr ng-click="test($index + 1)" ng-repeat="route in routes">
-            <td>{{$index + 1}}</td>
-            <td>{{route.name}}</td>
-            <td>{{route.price}}</td>
-            <td>{{route.load}}</td>
-            <td>{{route.info}}</td>
-        </tr>
-    </table>
+<div ng-controller="RouteListCtrl" class="routes">
+    <h2>Routes</h2>
+    <button type="button" style="position: absolute; top: 5px; right: 0;" class="btn btn-primary">New route</button>
+    <div>
+        <table class="table table-striped">
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Fare (UAH)</th>
+                <th>Load (%)</th>
+            </tr>
+            <tr ng-mouseenter="setCurrentRoute($index)" ng-click="showRoute($index + 1)" ng-repeat="route in routes">
+                <td>{{$index + 1}}</td>
+                <td>{{route.name}}</td>
+                <td>{{route.fare}}</td>
+                <td>{{route.load}}</td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <div ng-repeat="route in routes" ng-show="$index == currentRoute">
+            <img src="http://maps.googleapis.com/maps/api/staticmap?size=390x400&path=color:0x0000ff|weight:5|{{route.coord}}">
+        </div>
+    </div>
 </div>

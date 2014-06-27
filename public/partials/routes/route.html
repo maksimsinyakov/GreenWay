@@ -1,1 +1,41 @@
-Route {{id}}
+<div ng-controller="RouteCtrl" class="route">
+    <div class="overview">
+        <div>
+            <img width="300" src="http://bit.ly/1qeOJZf">
+        </div>
+        <div class="route-info">
+            <p>Name:<span>{{route.name}}</span></p>
+            <p>Fare:<span>{{route.fare}} UAH</span></p>
+            <p>Current load:<span style="color: #fe0;">{{route.load}}%</span></p>
+            <div class="btn-group">
+                <label class="btn btn-primary disabled" ng-model="radioStatus">Status</label>
+                <label class="btn btn-primary" ng-model="radioStatus" btn-radio="'all'">All</label>
+                <label class="btn btn-primary" ng-model="radioStatus" btn-radio="0">Red</label>
+            </div>
+        </div>
+        <br clear="all" />
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <tr>
+                <th>#</th>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Reg</th>
+                <th>Color</th>
+                <th>User</th>
+                <th>Status</th>
+            </tr>
+            <tr ng-repeat="move in moves | byStatus: radioStatus">
+                <td>{{$index + 1}}</td>
+                <td>{{move.car.brand}}</td>
+                <td>{{move.car.model}}</td>
+                <td>{{move.car.reg}}</td>
+                <td>{{move.car.color}}</td>
+                <td>{{move.car.user.name}} {{move.car.user.surname}}</td>
+                <td><div class="status tp-{{move.status}}"></div></td>
+            </tr>
+        </table>
+    </div>
+</div>

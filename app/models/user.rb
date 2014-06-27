@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  has_many :cars
+  has_many :moves
 
   validates :name, presence: true
-  attr_accessible :car_id, :id, :info, :name
+  attr_accessible :surname, :card, :id, :info, :name
 end
